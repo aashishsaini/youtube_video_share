@@ -16,7 +16,19 @@
           <%= link_to 'Funny Videos', root_path, class: 'navbar-brand' %>
         </div>
         <ul class="nav navbar-nav pull-right">
-          <li><%= link_to 'Share Video', new_video_path %></li>
+          <% if current_user %>
+            <li><%= link_to "Welcome #{current_user.email}", 'javascript:void(0);', class: 'active' %></li>
+            <li><%= link_to 'Share a movie', new_video_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <div style="margin-top: 1.5%">
+              <%= form_for User.new, url: user_session_path do |f| %>
+                <%= f.text_field :email, placeholder: 'Email' %>
+                <%= f.password_field :password, placeholder: 'Password' %>
+                <%= f.submit 'Login/Register', class: 'btn btn-primary' %>
+              <% end %>
+            </div>
+          <% end %>
         </ul>
       </div>
     </div>
