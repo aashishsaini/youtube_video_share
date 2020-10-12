@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  link: MyString
+  title: MyString
+  published_at: 2020-10-09 13:58:12
+  likes: 1
+  dislikes: 1
+  uid: MyString
+  description: MyText
+  image_url: MyString
+
+two:
+  link: MyString
+  title: MyString
+  published_at: 2020-10-09 13:58:12
+  likes: 1
+  dislikes: 1
+  uid: MyString
+  description: MyText
+  image_url: MyString

@@ -63,3 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # gem to make youtube api call
 gem 'yt'
+
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'jquery-rails'
+gem 'rails-observers'

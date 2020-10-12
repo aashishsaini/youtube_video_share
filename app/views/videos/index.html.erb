@@ -1,0 +1,26 @@
+<div class="container">
+  <div id="player-wrapper"></div>
+  <% @videos.each do |video| %>
+    <div class="row yt_video thumbnail">
+      <div class="col-md-5" style="margin-top: 3%">
+        <%= link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'img-rounded'),
+                    "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank' %>
+      </div>
+      <div class="col-md-7">
+        <div class="caption">
+          <h3><%= video.title %></h3>
+          <p><b>Published at</b> <%= video.published_at.strftime('%-d %B %Y %H:%M:%S') %></p>
+          <p>
+            <span class="glyphicon glyphicon glyphicon-thumbs-up"></span> <%= video.likes || 0 %>
+            <span class="glyphicon glyphicon glyphicon-thumbs-down"></span> <%= video.dislikes || 0 %>
+          </p>
+          <p>
+            <b>Description:</b>
+            <br/>
+            <%= video.description.html_safe %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end if @videos.present? %>
+</div>

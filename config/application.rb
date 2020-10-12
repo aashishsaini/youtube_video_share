@@ -11,6 +11,8 @@ module Myapp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
+    config.active_record.observers = :video_observer
+
     # add api key of Youtube api to gem
     Yt.configuration.api_key = Rails.application.credentials[:api_key]
 
